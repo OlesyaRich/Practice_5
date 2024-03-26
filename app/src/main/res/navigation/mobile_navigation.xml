@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/AFragment"
-        android:name="com.example.practice_5.FragmentA"
+        android:name="com.example.practice_5.UI.FragmentA"
         android:label="Blank"
         tools:layout="@layout/fragment_a">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/BFragment"
-        android:name="com.example.practice_5.FragmentB"
+        android:name="com.example.practice_5.UI.FragmentB"
         android:label="Blank"
         tools:layout="@layout/fragment_b">
         <action
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/CFragment"
-        android:name="com.example.practice_5.FragmentC"
+        android:name="com.example.practice_5.UI.FragmentC"
         android:label="Blank"
         tools:layout="@layout/fragment_c"/>
 </navigation>

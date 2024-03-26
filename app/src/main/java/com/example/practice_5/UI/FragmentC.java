@@ -1,4 +1,4 @@
-package com.example.practice_5;
+package com.example.practice_5.UI;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,10 +12,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.practice_5.Data.AnimalsRepository;
+import com.example.practice_5.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentC extends Fragment {
+    AnimalsRepository animal;
+
     public FragmentC() {
         super(R.layout.fragment_c);
     }
@@ -30,19 +35,21 @@ public class FragmentC extends Fragment {
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        String cat_name = this.getArguments().getString("cat_name");
+        animal = (AnimalsRepository) getArguments().getSerializable("Animal");
+
+//        String cat_name = this.getArguments().getString("cat_name");
         TextView catName = requireView().findViewById(R.id.t_name);
-        String cat_Name = "Имя: " + cat_name;
+        String cat_Name = "Имя: " + animal.getAnimalName();
         catName.setText(cat_Name);
 
-        String cat_type = this.getArguments().getString("cat_type");
+//        String cat_type = this.getArguments().getString("cat_type");
         TextView catType = requireView().findViewById(R.id.t_type);
-        String cat_Type = "Тип: " + cat_type;
+        String cat_Type = "Тип: " + animal.getAnimalType();
         catType.setText(cat_Type);
 
-        String cat_age = this.getArguments().getString("cat_age");
+//        String cat_age = this.getArguments().getString("cat_age");
         TextView catAge = requireView().findViewById(R.id.t_age);
-        catAge.setText(cat_age);
+        catAge.setText(animal.getAnimalAge());
     }
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
